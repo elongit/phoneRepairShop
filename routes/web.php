@@ -24,3 +24,16 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
+Route::get('/appointment', function () {
+    $times =  ['10:00' , '20:00' , '6:00' , '11:00','10:00' , '20:00' , '6:00' , '11:00'];
+    return view('appointment' , compact('times'));
+})->name('appointment');
+
+Route::get('/track', function () {
+    return view('track' );
+})->name('track');
+
+
+
+
+

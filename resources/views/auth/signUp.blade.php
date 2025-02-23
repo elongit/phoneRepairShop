@@ -27,15 +27,13 @@
             <x-form-input type="text" id="email" placeholder="Your email"/>
             <x-form-error name='email'  />
 
-
+            <x-form-label name="phone_number" class="font-semibold text-gray-500">Phone Number</x-form-label>
+                <x-form-input type="text" id="phone_number" placeholder="Your Phone Number" required />
+                <x-form-error name="phone_number" />
+                
             <x-form-label name="password" class="font-semibold text-gray-500">Password</x-form-label>
             <x-form-input type="password" id="password" placeholder="Your password"/>
             <x-form-error name='password'  />
-
-
-            <x-form-label name="password_confirmation" class="font-semibold text-gray-500"> Confirm your Password</x-form-label>
-            <x-form-input type="password" id="password_confirmation"  placeholder=" Confirm your Password"/>
-            <x-form-error name='password_confirmation'  />
 
 
             <button type="submit" class="bg-green-500 text-white font-semibold rounded p-2.5 ">Sign up</button>
