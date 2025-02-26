@@ -1,0 +1,68 @@
+@startuml PhoneRepairServices
+
+' skinparam linetype ortho
+entity user {
+    *id : number <<PK>>
+    --
+    name : string
+    email : string <<unique>>
+    password : string
+}
+
+entity role {
+    *id : number <<PK>>
+    --
+    name : string
+}
+
+entity user_role {
+    *id : number <<PK>>
+    --
+    user_id : number <<FK>> (user.id)
+    role_id : number <<FK>> (role.id)
+}
+
+entity service_type {
+    *id : number <<PK>>
+    --
+    service_name : string
+}
+
+entity phone_type {
+    *id : number <<PK>>
+    --
+    device_model : string
+    IMEI_number : number
+    service_type_id : number <<FK>> (service_type.id)
+}
+
+entity phone_repair_request {
+    *id : number <<PK>>
+    --
+    issue_description : text
+    phone_type_id : number <<FK>> (phone_type.id)
+    user_id : number <<FK>> (user.id)
+    appointment_id : number <<FK>> (appointment.id) 
+
+entity appointment {
+    *id : number <<PK>>
+    --
+    appointment_date : date
+    appointment_time_id : number <<FK>> (appointment_time.id)  
+}
+
+entity appointment_time {
+    *id : number <<PK>>
+    --
+    time : string
+}
+
+user ||--|{ user_role : includes
+role ||--|{ user_role : has
+user ||--|{ phone_repair_request : performs
+phone_type ||--|{ phone_repair_request : belongs_to
+phone_type ||--|{ service_type : is_of_type
+appointment ||--|{ phone_repair_request : schedules
+appointment }|--|| appointment_time : has_time 
+
+@enduml

@@ -3,7 +3,7 @@
       Home
    </x-slot>
      
-   <section class="my-5 md:my-24 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+   <section class="my-5 md:my-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ">
       <figure class="order-last lg:order-last overflow-hidden cursor-zoom-in">
          <img
          src="{{ asset('images/smartPhone.png') }}"
@@ -19,10 +19,9 @@
          <p class="text-[17px] md:text-xl my-4 md:my-7 lg:my-4 text-black/50">
          Explore our high-quality phone services including repairs, accessories, mobile plans, and more, all at affordable prices.         </p>
          <div class="w-fit">
-            <a href="{{ route('contact') }}" class="bg-green-500 text-white px-4 py-3 rounded font-semibold transition-all hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
+            <a href="{{ route('repair') }}" class="bg-green-500 text-white px-4 py-3 rounded font-semibold transition-all hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
             Repair my phone
              </a>
-
          </div>
       </div>
    </section>
@@ -37,7 +36,7 @@
          <img
             src="https://t4.ftcdn.net/jpg/09/56/94/87/360_F_956948738_qmUNWlaxfgdUZdzp5hTlMumdD3xbuCvP.jpg"
             alt="Technician repairing smartphones"
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover rounded hover:scale-110 transition-all"
          />
       </figure>
 
@@ -70,7 +69,7 @@
    <figure class="w-4/5 md:w-2/3 m-auto">
       <img 
          src="https://static.wixstatic.com/media/40bb32_11399d500cb54624a779f61d8b2db2c7~mv2.png/v1/fill/w_909,h_909,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Iphones.png" 
-         class="w-full rounded-lg shadow-lg" 
+         class="w-full rounded-lg shadow-lg h-full object-cover  hover:scale-110 transition-all" 
          alt="Iphones"
       />
    </figure>
